@@ -55,7 +55,7 @@ Base styles used by All Screens DO NOT EDIT ABOVE
 
 html{
     background-color: var(--html-background);
-    font-family: sans-serif;
+    font-family: Verdana, Geneva, sans-serif;
     font-size: 12px;
 }
 
@@ -65,9 +65,9 @@ body{
     margin-left: auto;
     margin-right: auto;
     box-shadow: var(--shadow-color) 10px 10px 25px, 
-    var(--shadow-color) -10px 10px 25px;;
+    var(--shadow-color) -10px 10px 25px;
 }
-header{
+body header{
     background-color: white;
     width: 100%;
 }
@@ -97,37 +97,37 @@ nav.top ul li a{
     padding-left: 0%;
     padding-right: 0%;
 }
-nav.top ul li a :hover{
+nav.top ul li a:hover{
     color: var(--nav-active);
     text-shadow: 0px 0px 2px black, 
     0px 0px 15px white;
 }
-p img{
+article p:nth-child(2) img{
     float: right;
     width: 45%;
     margin-top: 0px;
     margin-right: 0px;
     margin-left: 120px;
     margin-bottom: 50px;
-    transform: translateY(-120px);
-    transform: rotate(30deg);
+    transform: translate(0,60px) rotate(30deg);
+    box-shadow: var(--shadow-color) 10px -10px 30px ;
 }
-.spotlight{
+section.spotlight{
     background-color: var(--spotlight-color);
     padding-bottom: 15px;
     overflow: auto;
 }
-.spotlight h1{
+section.spotlight h1{
     font-size: 2.5rem;
     color: var(--text-color);
-    text-shadow: white -2px 0px 1px, white -5px 0px 30px;
+    box-shadow: white -2px 0px 1px, white -5px 0px 30px;
     padding-top: 20px;
     padding-bottom: 10px;
     padding-left: 0px;
     padding-right: 15px;
     text-align: right;
 }
-.spotlight img{
+section.spotlight img{
     width: 35%;
     float: left;
     display: block;
@@ -136,9 +136,185 @@ p img{
     margin-top: 20px;
     margin-left: 15px;
 }
-.spotlight p{
-    margin-bottom: none;
+section.spotlight p{
+    margin-bottom: 0;
 }
 aside{
     background-color: var(--textbackground-color);
 }
+aside a{
+    color: var(--nav-active);
+}
+aside h1{
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: 0.4rem;
+    text-align: center;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+aside img{
+    display: block;
+    width: 30%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+dl{
+    text-align: center;
+}
+footer{
+    width: 100%;
+}
+dl dd{
+    margin-bottom: 20px;
+}
+nav#bottom{
+    background-color: var(--nav-active);
+    color: var(--text-color);
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+nav#bottom ul li{
+    font-size: 1rem;
+    line-height: 1.8rem;
+}
+nav#bottom ul a{
+    color: white;
+}
+footer p{
+    color: var(--text-color);
+    font-size: 0.9rem;
+    text-align: center;
+    background-color: black;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 0px;
+}
+nav#bottom ul{
+    flex-shrink: 1;
+    flex-grow: 0;
+    flex-basis: 150px;
+}
+
+@media(max-width:480px){
+    body{
+        background-color: var(--shadow-color);
+        color: var(--textbackground-color);
+    }
+    aside{
+        display: none;
+    }
+    img{
+        display: none;
+    }
+    .spotlight{
+        display:none;
+    }
+    nav.top ul{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    nav.top ul li{
+        font-size: 2.2rem;
+        flex-basis: 130px;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+    nav.top ul li a{
+        padding-top: 50%;
+        padding-bottom: 50%;
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+    nav.top ul li:nth-of-type(1) {
+        background-image: url(images/cw_image01.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    nav.top ul li:nth-of-type(2) {
+        background-image: url(images/cw_image02.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    nav.top ul li:nth-of-type(3) {
+        background-image: url(images/cw_image03.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    nav.top ul li:nth-of-type(4) {
+        background-image: url(images/cw_image04.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    nav.top ul li:nth-of-type(5) {
+        background-image: url(images/cw_image05.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    nav.top ul li:nth-of-type(6) {
+        background-image: url(images/cw_image06.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    p#links{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    p#links a{
+        background-color: var(--nav-active);
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 20px;
+    }
+}
+@media(min-width:481px){
+    body{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    article{
+        flex-basis: 400px;
+        flex-grow: 2;
+        flex-shrink: 2;
+    }
+    nav.top ul{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        background-color: var(--shadow-color);
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+    nav.top ul li{
+        flex-basis: 80px;
+        flex-grow: 0;
+        flex-shrink: 1;
+    }
+    p#links{
+        display: none;
+    }
+}
+/* This h */
+/* If you look at the page my image goes over the second p tag and Ive spent like an hour trying to figure out why and now i just really want to know so if you could some how tell me why it was doing that and how to fix it that would be great lol but its going to bug me now and now i hope me spliting the margins and flex stuff all alone it was just easier for me to do so i hope it doesnt dock off points*/
